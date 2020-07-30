@@ -27,11 +27,11 @@
         K300,       K302, K303, K304, K305, K306, K307, K308, K309, K310,       K312, K313, K314, \
         K400, K401,       K403,       K404, K406,       K408,       K410, K411, K412, K413, K414  \
         ) { \
-    { K000,  K001,  K002,  K003,  K004,  K005,  K006,  K007,  K008,  K009,  K010,  K011,  K012,  KC_NO, K014 }, \
-    { K100,  KC_NO, K102,  K103,  K104,  K105,  K106,  K107,  K108,  K109,  K110,  K111,  K112,  K113,  K114 }, \
-    { K200,  KC_NO, K202,  K203,  K204,  K205,  K206,  K207,  K208,  K209,  K210,  K211,  K212,  K213,  KC_NO }, \
-    { K300,  KC_NO, K302,  K303,  K304,  K305,  K306,  K307,  K308,  K309,  K310,  KC_NO, K312,  K313,  K314 }, \
-    { K400,  K401,  KC_NO, K403,  K404,  KC_NO, K406,  KC_NO, K408,  KC_NO, K410,  K411,  K412,  K413,  K414 }  \
+    { K000,  K001,  K002,  K003,  K004,  K005,  K006,  K007,  K008,  K009,  K010,  K011,  K012,  XXXXXXX, K014 }, \
+    { K100,  XXXXXXX, K102,  K103,  K104,  K105,  K106,  K107,  K108,  K109,  K110,  K111,  K112,  K113,  K114 }, \
+    { K200,  XXXXXXX, K202,  K203,  K204,  K205,  K206,  K207,  K208,  K209,  K210,  K211,  K212,  K213,  XXXXXXX }, \
+    { K300,  XXXXXXX, K302,  K303,  K304,  K305,  K306,  K307,  K308,  K309,  K310,  XXXXXXX, K312,  K313,  K314 }, \
+    { K400,  K401,  XXXXXXX, K403,  K404,  XXXXXXX, K406,  XXXXXXX, K408,  XXXXXXX, K410,  K411,  K412,  K413,  K414 }  \
 }
 
 /* https://github.com/qmk/qmk_firmware/blob/master/docs/keycodes.md */
@@ -91,19 +91,19 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
-              KC_TAB,     KC_NO,  KC_HOME,  KC_UP,   KC_END,  KC_NO,  KC_HOME, KC_PGDN, KC_PGUP,  KC_END,  KC_NO,   KC_NO,   KC_NO,     KC_NO,
+              KC_TAB,    XXXXXXX, KC_HOME, KC_UP,   KC_END,  XXXXXXX, KC_HOME, KC_PGDN, KC_PGUP, KC_END,  XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,
        // |------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------|
        //
        // |----1.75------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------2.25--------||
-           RCTL_T(KC_ESC),  KC_NO,  KC_LEFT, KC_DOWN, KC_RIGHT, KC_NO,  KC_LEFT, KC_DOWN,  KC_UP,  KC_RIGHT, KC_NO,   KC_NO,       KC_ENT,
+           RCTL_T(KC_ESC), XXXXXXX, KC_LEFT, KC_DOWN, KC_RIGHT,XXXXXXX, KC_LEFT, KC_DOWN, KC_UP,   KC_RIGHT,XXXXXXX, XXXXXXX,      KC_ENT,
        // |--------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------------||
        //
        // |------2.25--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----1.75------|--------|--------||
-               KC_LSFT,       KC_MPRV, KC_MUTE, KC_VOLD, KC_VOLU, KC_MNXT,  KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_LOCK,     KC_PGUP, KC_INS,
+              KC_LSHIFT,      KC_MPRV, KC_MUTE, KC_VOLD, KC_VOLU, KC_MNXT, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     KC_LOCK,    KC_PGUP, KC_INS,
        // |------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------||--------------|--------|--------||
        //
        // |---1.25---|---1.25---||---1.25---||--------2.75----------||---1.25---|------2.25--------||--------|--------|--------|--------|--------|
-            KC_HYPR,    KC_LALT,    KC_LGUI,   KC_MEDIA_PLAY_PAUSE,    KC_TRNS,      KC_TRNS,        KC_TRNS, KC_TRNS, KC_HOME, KC_PGDN,  KC_END
+             KC_HYPR,   KC_LALT,    KC_LGUI,   KC_MEDIA_PLAY_PAUSE,    _______,      _______,        _______, _______, KC_HOME, KC_PGDN,  KC_END
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 
@@ -122,23 +122,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
-            TO(0),  KC_ACL0, KC_ACL1, KC_ACL2,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,        KC_NO,
+            TO(0),  KC_ACL0, KC_ACL1, KC_ACL2, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
-              KC_NO,      KC_NO,  KC_BTN2, KC_MS_U, KC_BTN1,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,
+             XXXXXXX,    XXXXXXX, KC_BTN2, KC_MS_U, KC_BTN1, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,
        // |------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------|
        //
        // |----1.75------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------2.25--------||
-           RCTL_T(KC_ESC), KC_BTN3, KC_MS_L, KC_MS_D, KC_MS_R,  KC_NO,  KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,  KC_NO,   KC_NO,       KC_NO,
+           RCTL_T(KC_ESC), KC_BTN3, KC_MS_L, KC_MS_D, KC_MS_R, XXXXXXX, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R, XXXXXXX, XXXXXXX,     XXXXXXX,
        // |--------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------------||
        //
        // |------2.25--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----1.75------|--------|--------||
-                KC_RSHIFT,     KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,      KC_PGUP,   KC_NO,
+              KC_RSHIFT,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,     KC_PGUP,  XXXXXXX,
        // |------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------||--------------|--------|--------||
        //
        // |---1.25---|---1.25---||---1.25---||--------2.75----------||---1.25---|------2.25--------||--------|--------|--------|--------|--------|
-            KC_HYPR,    KC_LALT,    KC_LGUI,         KC_BTN1,           KC_NO,        KC_NO,          TG(2),   KC_NO,  KC_HOME, KC_PGDN,  KC_END
+            KC_HYPR,    KC_LALT,    KC_LGUI,        KC_BTN1,           XXXXXXX,      XXXXXXX,         TG(2),  XXXXXXX, KC_HOME, KC_PGDN,  KC_END
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 
@@ -157,23 +157,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
-            TO(0),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,        KC_NO,
+            TO(0), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
-              KC_NO,      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_P7,   KC_P8,   KC_P9,  KC_PMNS, KC_PPLS,  KC_NO,   KC_NO,     KC_NO,
+              XXXXXXX,    XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_P7,   KC_P8,   KC_P9,  KC_PMNS, KC_PPLS, XXXXXXX, XXXXXXX,   XXXXXXX,
        // |------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------|
        //
        // |----1.75------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|-------|------2.25--------||
-              KC_NO,        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_P4,   KC_P5,   KC_P6,  KC_PSLS, KC_PAST,  KC_NO,       KC_NO,
+              XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_P4,   KC_P5,   KC_P6,  KC_PSLS, KC_PAST, XXXXXXX,    XXXXXXX,
        // |--------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------------||
        //
        // |------2.25--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----1.75------|--------|--------||
-                KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_P1,   KC_P2,   KC_P3,  KC_PDOT,     KC_PENT,     KC_NO,   KC_NO,
+                XXXXXXX,      XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  KC_P1,   KC_P2,   KC_P3,   KC_PDOT,    KC_PENT,    XXXXXXX, XXXXXXX,
        // |------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------||--------------|--------|--------||
        //
        // |---1.25---|---1.25---||---1.25---||--------2.75----------||---1.25---|------2.25--------||--------|--------|--------|--------|--------|
-             KC_NO,     KC_NO,      KC_NO,           KC_NO,             KC_NO,        KC_P0,          KC_NO,   TG(3),   KC_NO,   KC_NO,   KC_NO
+             XXXXXXX,   XXXXXXX,    XXXXXXX,        XXXXXXX,           XXXXXXX,        KC_P0,        XXXXXXX,   TG(3), XXXXXXX, XXXXXXX, XXXXXXX
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 
@@ -192,23 +192,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
-            TO(0),   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,        KC_NO,
+             TO(0), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
-              KC_NO,      KC_NO,   KC_NO,   KC_NO,   RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,    RGB_HUD,
+              XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX,   RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RGB_HUD,
        // |------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------|
        //
        // |----1.75------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------2.25--------||
-              KC_NO,        AU_ON,   AU_OFF,  AU_TOG,  KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  RGB_M_P, RGB_MOD,     KC_RSHIFT,
+              XXXXXXX,      AU_ON,   AU_OFF,  AU_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RGB_M_P, RGB_MOD,   KC_RSHIFT,
        // |--------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------------||
        //
        // |------2.25--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----1.75------|--------|--------||
-                KC_NO,         MU_ON,  MU_OFF,  MU_TOG,  MU_MOD,   KC_NO,   KC_NO,   KC_NO,   KC_NO,  RGB_TOG,     RGB_VAI,    RGB_HUI,  KC_TRNS,
+                XXXXXXX,       MU_ON,   MU_OFF,  MU_TOG,  MU_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RGB_TOG,    RGB_VAI,    RGB_HUI, _______,
        // |------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------||--------------|--------|--------||
        //
        // |---1.25---|---1.25---||---1.25---||--------2.75----------||---1.25---|------2.25--------||--------|--------|--------|--------|--------|
-             KC_NO,     KC_NO,      KC_NO,           KC_NO,             KC_NO,        KC_NO,          KC_NO,  KC_TRNS, RGB_SAD, RGB_VAD, RGB_SAI
+             XXXXXXX,   XXXXXXX,    XXXXXXX,         XXXXXXX,           XXXXXXX,     XXXXXXX,        XXXXXXX, _______, RGB_SAD, RGB_VAD, RGB_SAI
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 
@@ -227,23 +227,23 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
-            KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,        KC_NO,
+           XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
-              KC_NO,      KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,     KC_NO,
+              XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,
        // |------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------|
        //
        // |----1.75------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------2.25--------||
-              KC_NO,        KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,       KC_NO,
+              XXXXXXX,     XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,
        // |--------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------------||
        //
        // |------2.25--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----1.75------|--------|--------||
-                KC_NO,         KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO,      KC_NO,       KC_NO,   KC_NO,
+               XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,    XXXXXXX,     XXXXXXX, XXXXXXX,
        // |------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------||--------------|--------|--------||
        //
        // |---1.25---|---1.25---||---1.25---||--------2.75----------||---1.25---|------2.25--------||--------|--------|--------|--------|--------|
-             KC_NO,     KC_NO,      KC_NO,           KC_NO,             KC_NO,        KC_NO,          KC_NO,   KC_NO,   KC_NO,   KC_NO,   KC_NO
+            XXXXXXX,   XXXXXXX,    XXXXXXX,         XXXXXXX,           XXXXXXX,      XXXXXXX,        XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 };
