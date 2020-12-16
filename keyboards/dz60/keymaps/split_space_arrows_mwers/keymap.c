@@ -49,6 +49,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├────┬───┴┬──┴─┬─┴───┴──┬┴───┼───┴───┴──┬┴──┬┴──┬───┼───┼───┤
      * │HYPR│LALT│LGUI│ SPACE  │MO3 │   MO1    │TG2│TG3│ ← │ ↓ │ → │
      * └────┴────┴────┴────────┴────┴──────────┴───┴───┴───┴───┴───┘
+     *
+     * MO1 - Activates layer 1 while held down
+     * TG2 - Toggles layer 2 when pressed
+     * TG3 - Toggles layer 3 when pressed
+     * MO3 - Activates layer 3 while held down
+     * MO4 - Activates layer 4 while held down
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
@@ -84,6 +90,12 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├────┬───┴┬──┴─┬─┴───┴──┬┴───┼───┴───┴──┬┴──┬┴──┬───┼───┼───┤
      * │HYPR│LALT│LGUI│PLAY_TGL│    │          │   │   │HOM│PDN│END│
      * └────┴────┴────┴────────┴────┴──────────┴───┴───┴───┴───┴───┘
+     *
+     * PRV - Previous Audio Track
+     * NXT - Next Audio Track
+     * MUT - Mute
+     * VDN - Volume Down
+     * VUP - Volume Up
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
@@ -109,16 +121,25 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer 2: mouse navigation
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
-     * │   │   │   │   │   │   │   │   │   │   │   │   │   │       │
+     * │TO0│AC0│AC1│AC2│   │   │   │   │   │   │   │   │   │       │
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
-     * │     │   │   │   │   │   │   │   │   │   │   │   │   │     │
+     * │     │   │MS2│MSU│MS1│   │   │   │   │   │   │   │   │     │
      * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤
-     * │      │   │   │   │   │   │   │   │   │   │   │   │        │
+     * │CT/ESC│MS3│MSL│MSD│MSR│   │WHL│WHD│WHU│WHR│   │   │        │
      * ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴┬───┬───┤
-     * │        │   │   │   │   │   │   │   │   │   │      │   │   │
+     * │ RSHIFT │   │   │   │   │   │   │   │   │   │      │PUP│   │
      * ├────┬───┴┬──┴─┬─┴───┴──┬┴───┼───┴───┴──┬┴──┬┴──┬───┼───┼───┤
-     * │    │    │    │        │    │          │   │   │   │   │   │
+     * │HYPR│LALT│LGUI│  MS1   │    │          │TG2│   │HOM│PDN│END│
      * └────┴────┴────┴────────┴────┴──────────┴───┴───┴───┴───┴───┘
+     *
+     * AC0 - Set cursor acceleration to slowest speed
+     * AC1 - Set cursor acceleration to half maximum speed
+     * AC2 - Set cursor acceleration to maximum speed
+     * MS1 - Mouse button 1 (Left Click)
+     * MS2 - Mouse button 2 (Right Click)
+     * MS3 - Mouse button 3 (Middle Click)
+     * MS[UDLR] - Mouse up/down/left/right
+     * WH[UDLR] - Mouse wheel up/down/left/right
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
@@ -144,7 +165,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     /* Layer 3: numpad
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
-     * │TO0│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │   │   │       │
+     * │TO0│ 1 │ 2 │ 3 │ 4 │ 5 │ 6 │ 7 │ 8 │ 9 │ 0 │NLK│NLK│       │
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
      * │     │   │   │   │   │   │ 7 │ 8 │ 8 │ - │ + │   │   │     │
      * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤
@@ -152,12 +173,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴┬───┬───┤
      * │        │   │   │   │   │   │ 1 │ 2 │ 3 │ . │ENTER │   │   │
      * ├────┬───┴┬──┴─┬─┴───┴──┬┴───┼───┴───┴──┬┴──┬┴──┬───┼───┼───┤
-     * │    │    │    │        │    │     0    │   │TG3│   │   │   │
+     * │    │    │    │        │(*) │     0    │   │TG3│   │   │   │
      * └────┴────┴────┴────────┴────┴──────────┴───┴───┴───┴───┴───┘
+     *
+     * NLK - Number Lock
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
-            TO(0),   KC_P1,   KC_P2,   KC_P3,   KC_P4,   KC_P5,   KC_P6,   KC_P7,   KC_P8,   KC_P9,   KC_P0,  XXXXXXX, XXXXXXX,      XXXXXXX,
+            TO(0),   KC_P1,   KC_P2,   KC_P3,   KC_P4,   KC_P5,   KC_P6,   KC_P7,   KC_P8,   KC_P9,   KC_P0,  KC_NLCK, KC_LNUM,      XXXXXXX,
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
@@ -177,38 +200,54 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 
-    /* Layer 4: RGB lighting controls and keyboard config, reset
+    /* Layer 4: RGB Lighting Controls and Reset
      * ┌───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───┬───────┐
-     * │   │   │   │   │   │   │   │   │   │   │   │   │   │       │
+     * │   │RM1│RM2│RM3│RM4│RM5│RM6│RM7│RM8│RM9│   │   │   │ RESET │
      * ├───┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─────┤
-     * │     │   │   │   │   │   │   │   │   │   │   │   │   │     │
+     * │     │RM+│RH+│RS+│RB+│   │   │   │   │   │   │   │   │     │
      * ├─────┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴┬──┴─────┤
-     * │      │   │   │   │   │   │   │   │   │   │   │   │        │
+     * │      │RM-│RH-│RS-│RB-│   │   │   │   │   │   │   │RGB_TOG │
      * ├──────┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴─┬─┴───┴┬───┬───┤
-     * │        │   │   │   │   │   │   │   │   │   │      │   │   │
-     * ├────┬───┴┬──┴─┬─┴───┴──┬┴───┼───┴───┴──┬┴──┬┴──┬───┼───┼───┤
-     * │    │    │    │        │    │          │   │   │   │   │   │
-     * └────┴────┴────┴────────┴────┴──────────┴───┴───┴───┴───┴───┘
+     * │        │   │   │   │   │   │   │   │   │   │      │   │(*)│
+     * ├────┬───┴┬──┴─┬─┴───┴───┴───┴───┴───┴──┬┴──┬┴──┬───┼───┼───┤
+     * │    │    │    │                        │   │   │   │   │   │
+     * └────┴────┴────┴────────────────────────┴───┴───┴───┴───┴───┘
+     *
+     * RGB_TOG - RGB Lighting Toggle On/Off
+     * RM1 - RGB Lighting Mode 1 - Plain
+     * RM2 - RGB Lighting Mode 2 - Breathing
+     * RM3 - RGB Lighting Mode 3 - Rainbow
+     * RM4 - RGB Lighting Mode 4 - Swirl
+     * RM5 - RGB Lighting Mode 5 - Snake
+     * RM6 - RGB Lighting Mode 6 - Knight Rider
+     * RM7 - RGB Lighting Mode 7 - Christmas
+     * RM8 - RGB Lighting Mode 8 - Static Gradient
+     * RM9 - RGB Lighting Mode 9 - RGB Test
+     * RM+/- - RGB Lighting Mode Increase/Decrease
+     * RH+/- - RGB Lighting Hue Increase/Decrease
+     * RS+/- - RGB Lighting Saturation Increase/Decrease
+     * RB+/- - RGB Lighting Brightness Increase/Decrease
+     * RESET - Reset (Don't use this)
      */
     LAYOUT_b_4_10(
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||------2.0-------|
-             TO(0), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,      XXXXXXX,
+           XXXXXXX, RGB_M_P, RGB_M_B, RGB_M_R, RGB_M_SW,RGB_M_SN,RGB_M_K, RGB_M_X, RGB_M_G, RGB_M_T, XXXXXXX, XXXXXXX, XXXXXXX,       RESET,
        // |--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----------------|
        //
        // |----1.5-----||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|----1.5-----|
-              XXXXXXX,   XXXXXXX, XXXXXXX, XXXXXXX,   RESET, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RGB_HUD,
+              XXXXXXX,   RGB_MOD, RGB_HUI, RGB_SAI, RGB_VAI, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,   XXXXXXX,
        // |------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------|
        //
        // |----1.75------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------2.25--------||
-              XXXXXXX,      AU_ON,   AU_OFF,  AU_TOG, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RGB_M_P, RGB_MOD,   KC_RSHIFT,
+              XXXXXXX,     RGB_RMOD,RGB_HUD, RGB_SAD, RGB_VAD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     RGB_TOG,
        // |--------------||--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|--------|------------------||
        //
        // |------2.25--------|--------|--------|--------|--------|--------|--------|--------|--------|--------||----1.75------|--------|--------||
-                XXXXXXX,       MU_ON,   MU_OFF,  MU_TOG,  MU_MOD, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,  RGB_TOG,    RGB_VAI,    RGB_HUI, _______,
+               XXXXXXX,       XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX,     XXXXXXX,    XXXXXXX, _______,
        // |------------------|--------|--------|--------|--------|--------|--------|--------|--------|--------||--------------|--------|--------||
        //
        // |---1.25---|---1.25---||---1.25---||--------2.75----------||---1.25---|------2.25--------||--------|--------|--------|--------|--------|
-             XXXXXXX,   XXXXXXX,    XXXXXXX,         XXXXXXX,           XXXXXXX,     XXXXXXX,        XXXXXXX, _______, RGB_SAD, RGB_VAD, RGB_SAI
+             XXXXXXX,   XXXXXXX,    XXXXXXX,         XXXXXXX,           XXXXXXX,     XXXXXXX,        XXXXXXX, XXXXXXX, RGB_SAD, RGB_VAD, RGB_SAI
        // |----------|----------||----------||----------------------||----------|------------------||--------|--------|--------|--------|--------|
     ),
 
